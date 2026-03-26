@@ -9797,8 +9797,8 @@
 												"$ref": "AAAAAAGdJH5PkQqFFmk="
 											},
 											"font": "Arial;13;0",
-											"left": 32.72998046875,
-											"top": 13,
+											"left": 24.72998046875,
+											"top": 333,
 											"width": 115.9052734375,
 											"height": 13,
 											"text": "SequenceDiagram1"
@@ -9810,16 +9810,15 @@
 												"$ref": "AAAAAAGdJH5PkQqFFmk="
 											},
 											"font": "Arial;13;1",
-											"left": 13,
-											"top": 13,
+											"left": 5,
+											"top": 333,
 											"width": 14.72998046875,
 											"height": 13,
 											"text": "sd"
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 8,
-									"top": 8,
+									"top": 328,
 									"width": 1201,
 									"height": 1409,
 									"nameLabel": {
@@ -13634,7 +13633,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGdJH5PkQqCFdQ="
 					},
-					"name": "Role1"
+					"name": "Role1",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -13642,7 +13642,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGdJH5PkQqCFdQ="
 					},
-					"name": "Role2"
+					"name": "Role2",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -13650,7 +13651,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGdJH5PkQqCFdQ="
 					},
-					"name": "Role3"
+					"name": "Role3",
+					"type": ""
 				}
 			]
 		}

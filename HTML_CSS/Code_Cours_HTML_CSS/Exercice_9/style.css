@@ -1,0 +1,11 @@
+li:nth-child(2n) {
+    color: blue;
+}
+
+li:nth-child(2n):hover {
+    color: black;
+}
+
+li:hover {
+    color:blue;
+}

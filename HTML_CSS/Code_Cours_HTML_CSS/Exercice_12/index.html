@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div></div>
+    <div class = 'notActive mouvement'></div>
+    <script>
+        let myDiv = document.querySelector("div:nth-of-type(2)")
+        let temp = 1
+        function hallucine(grad) {
+            if(temp == 1) {
+                grad.classList.toggle('active')
+                grad.classList.toggle('notActive')
+                temp = 0
+            }
+            else if(temp == 0) {
+                grad.classList.toggle('notActive')
+                grad.classList.toggle('active')
+                temp = 1
+            }
+        }
+
+        let posX = 0
+        let posY = 0
+        function move(elem) {
+            elem.style.top = posY.toString() + 'px'
+            elem.style.left = posX.toString() + 'px'
+            if(posX > 50) {
+                posX = posX - 1
+                posY = posY - 1
+            }
+            else if(posX <= 50) {
+                posX++
+                posY++
+            }
+
+        }
+
+        setInterval(() => hallucine(myDiv, temp), 100)
+        setInterval(() => move(myDiv), 100)
+    </script>
+</body>
+</html>

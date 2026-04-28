@@ -13,6 +13,10 @@ nav {
     gap: 20px;
 } */
 
+
+main {
+    transition: display 2s ease;
+}
 main {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;

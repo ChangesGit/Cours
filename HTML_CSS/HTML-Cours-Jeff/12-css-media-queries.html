@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Responsive Design avec les Media Queries</title>
+    <!-- <link rel="stylesheet" href="../../assets/css/cours.css"> -->
+    <style>
+        /* Styles spécifiques pour la démonstration */
+        .demo-container {
+            border: 3px dashed #bdc3c7;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            background-color: #ecf0f1;
+            transition: all 0.5s ease;
+        }
+
+        /* La boîte change de couleur selon la largeur de l'écran */
+        .responsive-box {
+            padding: 20px;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            background-color: #2ecc71; /* Vert par défaut (PC) */
+        }
+
+        .responsive-box::after {
+            content: "ÉCRAN LARGE (Desktop)";
+        }
+
+        /* Media Query pour Tablettes */
+        @media (max-width: 992px) {
+            .responsive-box {
+                background-color: #3498db; /* Bleu */
+            }
+            .responsive-box::after {
+                content: "ÉCRAN MOYEN (Tablette)";
+            }
+        }
+
+        /* Media Query pour Mobiles */
+        @media (max-width: 600px) {
+            .responsive-box {
+                background-color: #e67e22; /* Orange */
+            }
+            .responsive-box::after {
+                content: "PETIT ÉCRAN (Mobile)";
+            }
+        }
+
+        /* Exemple de grille responsive */
+        .grid-demo {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .grid-item {
+            flex: 1 1 calc(33.33% - 10px);
+            background: #9b59b6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-item {
+                flex: 1 1 calc(50% - 10px); /* 2 colonnes sur tablette */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid-item {
+                flex: 1 1 100%; /* 1 colonne sur mobile */
+            }
+        }
+
+        .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Les Media Queries CSS</h1>
+        <p>Le <strong>Responsive Design</strong> consiste à créer des sites web qui s'adaptent automatiquement à la taille de l'écran de l'utilisateur. Les Media Queries sont l'outil principal pour y parvenir.</p>
+
+        <h2>1. La balise Viewport</h2>
+        <p>Pour que les Media Queries fonctionnent sur mobile, cette balise est <span class="highlight">obligatoire</span> dans le <code>&lt;head&gt;</code> :</p>
+        <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+
+        <h2>2. Syntaxe de base</h2>
+        <p>Une media query définit une règle qui ne s'applique que si une condition est remplie (généralement la largeur de l'écran).</p>
+        
+        <pre><code>/* Style par défaut (Mobile First ou Desktop First) */
+.card { width: 100%; }
+
+/* Si l'écran fait au moins 768px de large */
+@media (min-width: 768px) {
+    .card { width: 50%; }
+}
+
+/* Si l'écran fait au moins 1024px de large */
+@media (min-width: 1024px) {
+    .card { width: 25%; }
+}</code></pre>
+
+        <h3>Démonstration visuelle</h3>
+        <p>Redimensionnez la fenêtre de votre navigateur pour voir la boîte changer de couleur et de texte :</p>
+        <div class="demo-container">
+            <div class="responsive-box"></div>
+        </div>
+
+        <h2>3. Mobile First vs Desktop First</h2>
+        <ul>
+            <li><strong>Desktop First :</strong> On code pour les grands écrans, puis on réduit avec <code>max-width</code>.</li>
+            <li><strong>Mobile First (Recommandé) :</strong> On code pour mobile, puis on ajoute des règles pour les grands écrans avec <code>min-width</code>.</li>
+        </ul>
+
+        <h2>4. Points de rupture (Breakpoints) courants</h2>
+        <p>Il n'y a pas de règle absolue, mais voici les standards souvent utilisés :</p>
+        <ul>
+            <li><code>480px</code> : Mobiles en portrait</li>
+            <li><code>768px</code> : Tablettes</li>
+            <li><code>1024px</code> : Ordinateurs portables / petits écrans</li>
+            <li><code>1200px</code> : Écrans larges (Desktop)</li>
+        </ul>
+
+        <h3>Exemple de Grille Responsive</h3>
+        <p>Ce layout passe de 3 colonnes à 2, puis à 1 seule sur mobile :</p>
+        <div class="grid-demo">
+            <div class="grid-item">Élément 1</div>
+            <div class="grid-item">Élément 2</div>
+            <div class="grid-item">Élément 3</div>
+        </div>
+
+        <h2>5. Autres types de Media Queries</h2>
+        <p>On peut aussi cibler d'autres critères que la largeur :</p>
+        <ul>
+            <li><code>orientation: landscape</code> (paysage) ou <code>portrait</code></li>
+            <li><code>print</code> : styles spécifiques pour l'impression du document</li>
+            <li><code>prefers-color-scheme: dark</code> : pour le mode sombre de l'utilisateur</li>
+        </ul>
+
+        <pre><code>@media print {
+    nav, footer { display: none; } /* On cache le menu à l'impression */
+}
+
+@media (prefers-color-scheme: dark) {
+    body { background-color: #333; color: white; }
+}</code></pre>
+
+        <hr>
+        <p>Pour aller plus loin :</p>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/Media_Queries/Using_media_queries" target="_blank">MDN Web Docs - Utiliser les Media Queries</a></li>
+            <li><a href="https://css-tricks.com/a-complete-guide-to-css-media-queries/" target="_blank">CSS-Tricks - Guide complet des Media Queries</a></li>
+        </ul>
+    </div>
+</body>
+</html>

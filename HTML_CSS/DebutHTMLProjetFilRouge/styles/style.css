@@ -1,0 +1,96 @@
+@font-face {
+    font-family: Gotham-bold;
+    src: url(../assets/fonts/Gotham_Bold.otf);
+}
+
+@font-face {
+    font-family: Gotham-medium;
+    src: url(../assets/fonts/Gotham_Medium.otf);
+}
+
+@font-face {
+    font-family: Roboto-regular;
+    src: url(../assets/fonts/Roboto_Regular.ttf);
+}
+
+:root {
+    --mobile-width : 80%;
+}
+
+.soft-shadow {
+    box-shadow: 4px 4px 4px rgba(0, 0, 0,0.25);
+}
+
+.soft-border {
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.small-button {
+    background-color: #FDCED9;
+    height: 34px;
+    width: 116px;
+}
+
+.result-product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#search-results {
+    background-color: white;
+    width: var(--mobile-width);
+    margin:auto;
+    margin-top: 32px;
+    height: 360px;
+    padding: 10px;
+}
+
+
+
+header {
+    background-color: #9FC48E;
+    margin: 0;
+}
+
+h1 {
+    /* text-align: center; */
+    margin: 10%;
+    font-family: Gotham-bold;
+}
+header img {
+    display: block;
+    margin: auto;
+}
+
+body {
+    background-color: #FFFFFA;
+    margin: 0;
+    font-family: Roboto-regular;
+}
+
+
+form {
+    display : grid;
+    grid-template-columns: 3;
+    grid-template-rows: 2;
+    width: var(--mobile-width);
+    margin: auto;
+    gap: 19px;
+}
+
+form input {
+    grid-column: 1/span 3;
+    border-radius: 25px;
+    border: 1px solid black;
+}
+
+
+form button[type="submit"] {
+    grid-column: 1;
+}
+
+form button[type = "reset"] {
+    grid-column: 3;
+    justify-self: end;
+}

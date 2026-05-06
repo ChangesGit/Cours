@@ -1,0 +1,73 @@
+@font-face {
+    font-family: black-caps;
+    src: url(./fonts/BlackCapsRegular-wgA2.ttf);
+}
+
+@font-face {
+    font-family: all-round-gothic;
+    src: url(./fonts/AllRoundGothic-Bold.ttf);
+}
+
+@mixin border {
+    border: 1px solid black;
+    border-radius : 20px;
+}
+
+@mixin size($width : 10px, $height: 10px) {
+    width: $width;
+    height: $height;
+}
+
+.visit-card {
+    h1, h2,p  {
+        font-family: black-caps;
+        color: #ffffff;
+        text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+    }
+    background: url(./images/background-image-gotham.jpg);
+    @include size(550px, 850px);
+    @include border;
+    padding-left: 50px;
+    padding-right : 50px;
+    
+    span {
+        font-family: all-round-gothic;
+    }
+    .card-header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 50px 0px 50px 0px;
+        img {
+            @include size(200px, 200px);
+            object-fit: cover;
+            @include border;
+        }
+        div {
+            text-align: center;
+            // margin-right : 100px;
+        }
+    }
+
+    .card-main {
+        div {
+            margin-bottom: 100px;
+            em {
+                text-decoration: underline;
+            }
+            .card-socials {
+                display: flex;
+                justify-content: space-evenly;
+                @include border;
+                background-color: darkgray;
+                
+                img {
+                    @include size(75px, 75px);
+                    object-fit: cover;
+                    border-radius: 20px;
+                }
+            }
+        }
+    }
+
+}
+

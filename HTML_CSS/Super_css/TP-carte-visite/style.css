@@ -1,0 +1,61 @@
+@font-face {
+  font-family: black-caps;
+  src: url(./fonts/BlackCapsRegular-wgA2.ttf);
+}
+@font-face {
+  font-family: all-round-gothic;
+  src: url(./fonts/AllRoundGothic-Bold.ttf);
+}
+.visit-card h1, .visit-card h2, .visit-card p {
+  font-family: black-caps;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+.visit-card {
+  background: url(./images/background-image-gotham.jpg);
+  width: 550px;
+  height: 850px;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.visit-card span {
+  font-family: all-round-gothic;
+}
+.visit-card .card-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 50px 0px 50px 0px;
+}
+.visit-card .card-header img {
+  width: 200px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+.visit-card .card-header div {
+  text-align: center;
+}
+.visit-card .card-main div {
+  margin-bottom: 100px;
+}
+.visit-card .card-main div em {
+  text-decoration: underline;
+}
+.visit-card .card-main div .card-socials {
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: darkgray;
+}
+.visit-card .card-main div .card-socials img {
+  width: 75px;
+  height: 75px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px;
+}/*# sourceMappingURL=style.css.map */

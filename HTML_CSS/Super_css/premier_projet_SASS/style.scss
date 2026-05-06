@@ -1,0 +1,30 @@
+$citron: yellow;
+$lumiereBleu : lightblue;
+$cyanSombre: darkcyan;
+
+@mixin test {
+    background-color: black;
+}
+.container {
+    background-color: $citron;
+    p {
+        color: $lumiereBleu;
+    }
+    header {
+        nav {
+            ul {
+                background-color: $lumiereBleu;
+                a {
+                    color: $cyanSombre
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .container {
+        @include test;
+    }
+}
+

@@ -19,6 +19,7 @@
 
 h1 {
     font-size: 2.25rem;
+    font-family: Gotham-bold;
 }
 
 h3 {
@@ -32,6 +33,15 @@ p {
 h1 + div {
     border : 1px solid black;
     margin-bottom: 10px;
+}
+
+body {
+    background-color: #FFFFFA;
+}
+main {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 320px;
 }
 
 .soft-shadow {
@@ -53,21 +63,12 @@ h1 + div {
     background-color: #FDCED9;
     height: 40px;
     width: 190px;
+    display: block;
 }
 
 .result-product {
     display: flex;
     flex-direction: column;
-    & > div:first-of-type {
-        display: flex;
-        text-align: center;
-    }
-
-    & > div:last-of-type {
-        display: flex;
-        border: 1px solid black;
-        margin-top : 20px;
-    }
 
     & > div:nth-of-type(3) {
         display: flex;
@@ -79,16 +80,24 @@ h1 + div {
     }
 }
 
+.name-img-flex {
+    display: flex;
+    text-align: center;
+}
+
 #search-results {
-    background-color: white;
-    width: var(--mobile-width);
     margin:auto;
     margin-top: 32px;
     height: 360px;
     padding: 10px;
     & + button {
         margin-top: 20px;
+        justify-self: right;
     }
+}
+
+.content-box {
+    background-color: white;
 }
 
 .text-number {
@@ -124,14 +133,6 @@ header {
     }
 }
 
-h1 {
-    /* text-align: center; */
-    margin: 10%;
-    font-family: Gotham-bold;
-}
-header 
-
-
 body {
     background-color: #FFFFFA;
     margin: 0;
@@ -143,9 +144,9 @@ form {
     display : grid;
     grid-template-columns: 3;
     grid-template-rows: 2;
-    width: var(--mobile-width);
     margin: auto;
-    gap: 19px;
+    gap: 20px;
+    margin-top: 20px;
 }
 
 form input {
@@ -162,4 +163,91 @@ form button[type="submit"] {
 form button[type = "reset"] {
     grid-column: 3;
     justify-self: end;
+}
+
+#pending-food-box {
+    margin:auto;
+    margin-top: 50px;
+    padding: 10px;
+    padding-bottom: 20px;
+}
+
+.pending-food-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-infos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* justify-content: space-around;
+    flex-wrap: wrap;
+    margin-left: 25px;
+    margin-right: 25px; */
+}
+
+.icon-img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.text-button-flex {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    & > img {
+        align-self: center;
+    }
+}
+
+.item-infos-grid-element {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    & > .number-box{
+        margin: auto;
+    }
+}
+
+.box-bar {
+    width: 95%;
+    text-align: center;
+    height: 1px;
+    color: black;
+    background-color: black;
+}
+
+hr {
+    width: 100%;
+    
+}
+
+.pending-food-box-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 90%;
+    margin-top: 20px;
+    justify-self: center;
+    align-items: center;
+    & > div {
+        justify-self: center;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+    & > button {
+        justify-self: center;
+        width: 100%;
+    }
+
+}
+
+.summary-box {
+    padding: 10px;
+    margin-top: 50px;
+    & > h2 {
+        margin: 0;
+    }
 }

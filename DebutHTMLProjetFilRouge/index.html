@@ -16,7 +16,12 @@
         <hr> <!--barre de séparation-->
         <section> <!--Barre de recherche-->
             <form action="" method = "POST">
-                <input class = "soft-shadow soft-border" type="search" name = "searchBar" id = "searchBar" placeholder="Rechercher">
+                <div id = "search-bar" class = "soft-shadow">
+                    <div>
+                        <img class = "icon-img" src="./assets/images/search-icon.svg" alt="Search Icon">
+                    </div>
+                    <input type="search" name = "searchBar" id = "searchBar" placeholder="Rechercher">
+                </div>
                 <button class = "small-button soft-shadow soft-border" type = "submit">Rechercher</button>
                 <button class = "small-button soft-shadow soft-border" type = "reset">Effacer</button>
             </form>
@@ -97,7 +102,7 @@
             </div>
         </section>
 
-        <section class = "summary-box soft-border soft-shadow"> <!--Total Nutritionnel-->
+        <section class = "summary-box soft-border soft-shadow content-box"> <!--Total Nutritionnel-->
             <h2>Total :</h2>
             <div class = "text-number">
                 <p>Poids total : </p>

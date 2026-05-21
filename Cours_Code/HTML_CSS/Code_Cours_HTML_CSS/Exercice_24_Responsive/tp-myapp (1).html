@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MyHobby - Partage ta passion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+        /* ===== RESET ===== */
+        /* Bof le * c'est un sélecteur universel */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fafafa;
+            color: #222;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ===== NAVBAR ===== */
+        header {
+            background: linear-gradient(90deg, #4a90e2, #145eab);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #f7c948;
+        }
+
+        /* ===== BANNIERE DE BIENVENUE ===== */
+        .hero {
+            background: linear-gradient(135deg, #6dd5fa, #2980b9);
+            color: white;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            animation: fadeInUp 1s ease forwards;
+            opacity: 0;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            animation: fadeInUp 1s ease 0.5s forwards;
+            opacity: 0;
+        }
+
+        .hero button {
+            background: radial-gradient(circle at center, #f7c948, #d8a31d);
+            border: none;
+            padding: 0.75rem 2rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            color: #222;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background 0.3s ease;
+            animation: fadeInUp 1s ease 1s forwards;
+            opacity: 0;
+        }
+
+        .hero button:hover {
+            background: radial-gradient(circle at center, #d8a31d, #f7c948);
+            transform: scale(1.05);
+        }
+
+        /* Animation fadeInUp */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+
+        /* ===== SECTION THÉMATIQUES ===== */
+        .themes {
+            padding: 4rem 2rem 2rem;
+            max-width: 1200px;
+            margin:  auto;
+        }
+
+        .themes h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: #145eab;
+        }
+
+        .themes-grid {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(3,1fr);
+            /* grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); */
+        }
+
+        .theme-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .theme-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .theme-card img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            height: 140px;
+            object-fit: cover;
+        }
+
+        .theme-card h3 {
+            color: #4a90e2;
+            margin-bottom: 0.5rem;
+        }
+
+        .theme-card p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        /* ===== SECTION À PROPOS ===== */
+        .about {
+            display: flex;
+            max-width: 1100px;
+            margin: 4rem auto;
+            gap: 3rem;
+            align-items: center;
+            padding: 0 1rem;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #145eab;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #145eab;
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+
+        /* ===== RESPONSIVE ===== */
+
+        @media screen and (max-width: 920px) {
+            .about {
+                flex-direction: column;
+            }
+
+            .about-image,
+            .about-text {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .hero button {
+                padding: 0.6rem 1.5rem;
+                font-size: 1rem;
+            }
+            nav {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
+                width: 100%;
+                margin-top: 1rem;
+            }
+            .themes-grid {
+            display: grid;
+            /* gap: 1.5rem; */
+            /* grid-template-columns: repeat(3,1fr); */
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+            /* auto-fit : ajuste le nombre de colonnes en fonction de la largeur de l'écran */
+            /* minmax(220px, 1fr) : la largeur minimale de chaque colonne est de 220px et la largeur maximale est de 1fr (1fr = 100% de la largeur de l'écran) */
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">MyHobby</div>
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="#">Thématiques</a>
+            <a href="#">À propos</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Partage ta passion</h1>
+        <p>Rejoins une communauté d’amateurs passionnés et découvre de nouvelles activités chaque jour.</p>
+        <button>Commencer</button>
+    </section>
+
+    <section class="themes">
+        <h2>Nos thématiques populaires</h2>
+        <div class="themes-grid">
+            <div class="theme-card">
+                <img src="https://picsum.photos/400/300" alt="Peinture" />
+                <h3>Peinture</h3>
+                <p>Exprime ta créativité avec des couleurs et des formes uniques.</p>
+            </div>
+            <div class="theme-card">
+                <img src="https://picsum.photos/400/300" alt="Randonnée" />
+                <h3>Randonnée</h3>
+                <p>Explore la nature et partage tes plus beaux sentiers.</p>
+            </div>
+            <div class="theme-card">
+                <img src="https://picsum.photos/400/300" alt="Jeux vidéo" />
+                <h3>Jeux vidéo</h3>
+                <p>Rencontre d’autres gamers et découvre les dernières sorties.</p>
+            </div>
+            <div class="theme-card">
+                <img src="https://picsum.photos/400/300" alt="Cuisine" />
+                <h3>Cuisine</h3>
+                <p>Apprends de nouvelles recettes et partage tes astuces.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="about-text">
+            <h2>Pourquoi nous rejoindre ?</h2>
+            <p>MyHobby est une plateforme dédiée aux passionnés qui veulent partager leurs savoir-faire, découvrir des
+                talents et créer des liens forts. Que tu sois débutant ou expert, il y a une place pour toi.</p>
+        </div>
+        <div class="about-image">
+            <img src="https://picsum.photos/600/400" alt="Communauté" />
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 MyHobby - Tous droits réservés
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+@mixin blue-card {
+    background-color: #20497d;
+    color: white;
+    text-align: left;
+}
+
+
+.card {
+    color: #738bab;
+    height: 850px;
+    width: 550px;
+    border: 1px solid black;
+    background-color: #f2f2f2;
+    overflow: hidden;
+    header {
+        text-align: center;
+        .header-section {
+
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            article {
+                @include blue-card;
+                p {
+                    margin: 10px;
+                }
+            }
+            article + article {
+                background-color: white;
+                display: flex;
+                img {
+                    width: 90%;
+                    height: 90%;
+                    object-fit: cover;
+                    margin: auto;
+                }
+            }
+
+        }
+    }
+    main {
+        display: grid;
+        grid-template-columns:2fr 1fr;  
+        grid-template-rows: 1fr 1fr 1fr;  
+        .left-section {
+            background-color: white;
+            h3,p {
+                color: black;
+            }
+
+            h3 {
+                margin-bottom: 0px;
+            }
+            em {
+                color: #738bab;
+            }
+
+            h2 {
+                margin-left: 10px;
+            }
+            article {
+                display: grid;
+                grid-template-columns: 1fr 5fr;
+                margin: 10px;
+                .date {
+                    border: 1px solid black;
+                    border-radius : 100%;
+                    background-color: #20497d;
+                    color: white;
+                    text-align: center;
+                    align-self: center;
+                    justify-self: center;
+                    width: 60px;
+                    height: 60px;
+                    p {
+                        color: white;
+                        grid-column: -1;
+                        align-self: center;
+                    }
+                }
+
+                p{
+                    grid-column: 2;
+                }
+                
+            }
+        }
+
+        .right-section {
+            display: flex;
+            flex-direction: column;
+            
+            article:nth-of-type(2n+1) {
+                @include blue-card;
+            }
+
+            article {
+                padding-left: 20px;
+            }
+
+
+            nav {
+                ul {
+                    display: flex;
+                    flex-wrap: wrap;
+                    li {
+                        margin-right: 20px;
+                    }
+                }
+            }
+
+        }
+
+        .left-bar {
+            border: 1px solid black;
+            width: 80%;
+            justify-self: center;
+        }
+
+        .right-bar {
+            border: 1px solid black;
+            width: 80%;
+            justify-self: center;
+        }
+    }
+}

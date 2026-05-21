@@ -1,0 +1,10 @@
+@mixin lesDeuxPiedsDansLaMarge($left : 10px,$right : 10px, $up: 10px, $down: 10px) {
+    margin: $up $right $down $left;
+}
+
+.test {
+    width: 25vw;
+    aspect-ratio: 16/9;
+    background-color: rebeccapurple;
+    @include lesDeuxPiedsDansLaMarge($down: 30px);
+}

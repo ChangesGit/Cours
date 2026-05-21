@@ -1,0 +1,18 @@
+.container {
+  background-color: yellow;
+}
+.container p {
+  color: lightblue;
+}
+.container header nav ul {
+  background-color: lightblue;
+}
+.container header nav ul a {
+  color: darkcyan;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    background-color: black;
+  }
+}/*# sourceMappingURL=style.css.map */

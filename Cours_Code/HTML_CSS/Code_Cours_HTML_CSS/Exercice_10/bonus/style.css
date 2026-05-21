@@ -1,0 +1,12 @@
+body {
+    background-color: purple;
+}
+
+div {
+    margin: auto;
+    height: 55vh;
+    width: 55vw;
+    background-color: lightblue;
+    box-shadow: -2px -2px 2px white, 2px 2px 2px black;
+}
+

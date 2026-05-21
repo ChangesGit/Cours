@@ -1,0 +1,192 @@
+
+@font-face {
+    font-family: Josefin-sans;
+    src: url(./fonts/JosefinSans-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: Roboto-regular;
+    src: url(./fonts/Roboto-Regular.ttf);
+}
+
+body {
+    margin : 0;
+    font-family: Roboto-regular;
+}
+
+header nav {
+    justify-content: end;
+    /* border: 2px solid black; */
+}
+
+
+.logo, header nav {
+    margin: 20px;
+    font-family: Josefin-sans;
+    font-weight: bold;
+}
+
+.logo {
+    font-size : 1.4em;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: #228ca3;
+    background: linear-gradient(90deg,rgba(34, 140, 163, 1) 0%, rgba(18, 85, 110, 1) 100%);
+    color : whitesmoke;
+}
+
+header a {
+    color : whitesmoke;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1em;
+}
+
+.hero {
+    background: #3ccff0;
+    background: linear-gradient(90deg,rgba(60, 207, 240, 1) 0%, rgba(40, 143, 181, 1) 100%);
+    color: whitesmoke;
+    font-family: Roboto-regular;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.hero p {
+    width: 500px;
+    text-align: center;
+    color : rgba(245, 245, 245, 0.8)
+}
+
+.hero button {
+    border: 0px;
+    border-radius: 20px;
+    height: 40px;
+    width: 120px;
+    background: #CFA532;
+    background: linear-gradient(90deg,rgba(207, 165, 50, 1) 0%, rgba(230, 167, 85, 1) 50%, rgba(207, 165, 50, 1) 100%);
+    /* transition: background 20s; */
+}
+
+.hero button:hover {
+    background: #CFA532;
+    background: linear-gradient(90deg,rgba(207, 165, 50, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(207, 165, 50, 1) 100%);
+}
+
+h1 {
+    font-family: Josefin-sans;
+    font-weight: bold;
+    margin: 0;
+}
+
+.themes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 40%;
+    margin: auto;
+    Margin-top: 40px;
+    gap: 20px;
+}
+
+.theme-card {
+    box-shadow: 0px 1px 1px black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    transition: transform 0.3s;
+}
+
+.theme-card:hover {
+    transform: scale(1.1)
+}
+
+.themes h2 {
+    text-align: center;
+}
+
+h2 {
+    color: rgb(31, 31, 121);
+
+}
+
+.theme-card img {
+    margin-top: 15px;
+    width: 80%;
+    border-radius: 10px
+}
+
+.theme-card h3 {
+    font-size: 0.7em;
+    color: #228ca3;
+}
+
+.theme-card p {
+    font-size : 0.6em;
+    text-align: center;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 60%;
+    margin: auto;
+    margin-top: 5%;
+}
+
+.about-text {
+    align-self: center;
+}
+
+.about-text p {
+    font-size: 0.6em;
+}
+
+.about-image img {
+    border-radius: 10px;
+    width: 30vw;
+}
+
+.about-image {
+    display: block;
+    margin: auto;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    header nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .themes-grid {
+        grid-template-columns: 1fr;
+        width: 80%;
+    }
+
+    .theme-card img {
+        width: 60%;
+    }
+    
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        font-size: 0.8em;
+    }
+}
